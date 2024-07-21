@@ -1,0 +1,19 @@
+{
+  "name": "jwt-app",
+  "version": "1.0.0",
+  "description": "nodejs-jwt-auth/ ├── config/ │   └── db.js ├── controllers/ │   └── authController.js ├── middlewares/ │   └── authMiddleware.js ├── models/ │   └── User.js ├── routes/ │   └── authRoutes.js ├── .env ├── app.js ├── package.json └── README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1"
+  }
+}
