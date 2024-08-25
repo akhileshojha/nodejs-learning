@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Calculator</title>
+</head>
+<body>
+    <h1>String Calculator</h1>
+    <form id="calculator-form">
+        <label for="numbers">Enter your numbers (without quotes):</label><br>
+        <textarea id="numbers" name="numbers" placeholder="e.g., 1,2,3 or //;\n1;2" rows="5" cols="30"></textarea><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    <p id="result"></p>
+    
+    <script src="calculator.js"></script>
+    <script>
+        const form = document.getElementById('calculator-form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let numbers = document.getElementById('numbers').value.trim();
+
+            // Handle newlines and custom delimiters properly
+            numbers = numbers.replace(/\\n/g, '\n');
+
+            try {
+                const sum = add(numbers);
+                result.textContent = "Sum: " + sum;
+            } catch (error) {
+                result.textContent = error.message;
+            }
+        });
+    </script>
+</body>
+</html>
